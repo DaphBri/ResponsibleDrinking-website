@@ -1,0 +1,21 @@
+.big-wrap{
+    p{
+        color:rgb(71, 71, 71);
+        font-size: 15px;
+    }
+    padding: 17px 150px;
+    .menu-wrap{
+        display:flex;
+        justify-content: space-between;
+        padding: 30px 0;
+        a{
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin: 10px 17px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color:rgb(71, 71, 71);
+        }
+    }
+}

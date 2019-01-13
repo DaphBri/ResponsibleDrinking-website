@@ -1,0 +1,171 @@
+@keyframes arrow{
+    from {transform: translateY(0);}
+    to {transform: translateY(20px);}
+}
+.pop-menu{
+    opacity: 0;
+    &.active{
+        opacity: 1;
+        z-index:10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding:140px 0;
+        background: rgba(54, 54, 54, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+        a {
+            transition: 0.2s all ease-in-out;
+            font-family: 'Raleway', sans-serif;                   
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            line-height: 1.6em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            &:hover{
+                color: rgb(0, 156, 161);
+            }
+        }
+    }
+}
+
+.header {
+    height: 100vh;
+    background:#ae5757 url('../img/shutterstock_144807262-2.jpg') center/cover;
+   
+}
+.full-front-block{
+    position: relative;
+    width: 100%;
+    height:100%;
+    background: rgba(224, 224, 224, 0.200);
+
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 30px 20px;
+    justify-content: center;
+    .link{           
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;        
+        font-size: 1em;
+        text-transform: uppercase;
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    .burger {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        &.sticky{
+            position: fixed;
+            background: #000;
+            border-radius: 5px;
+        }
+        width: 36px;
+        height: 36px;
+        cursor: pointer;  
+        z-index: 11;
+        span{
+            @include centrageAbsolut();
+            width: 70%;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            transition:.3s all ease-in-out;
+        }
+        :first-child {
+            top:calc(50% - 7px);
+        }
+        :last-child {
+            top:calc(50% + 7px);
+        }
+        &.active{
+            :first-child {
+                top:50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            :nth-child(2){
+                opacity: 0;
+            }
+            :last-child {
+                top:50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}
+.front-wrapper{
+    width: 100%;
+    z-index: 2;
+    min-width: 1012px;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    .front-text{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        margin: 0 0 35px;
+        .title1{
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;        
+            font-size: 70px;
+            color:#fff;
+            text-align: center;
+        }
+        .text1{
+            text-align: center;
+        }
+    }
+    .button-wrap{
+        .button {
+            display: inline;
+            padding:17px 17px;
+            background: #ffffff00;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color:#fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            @include transitionBase();
+            &:hover {
+                background: #ffffff;
+                color:rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+.arrow-wrap{
+    margin: 35px 0 0;
+    font-size: 60px;
+    color:#fff;
+    animation-name: arrow;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+//<!-- banner -->
+
+//<!-- burger-menu-pop-up -->
+//<!-- text absolute front -->
